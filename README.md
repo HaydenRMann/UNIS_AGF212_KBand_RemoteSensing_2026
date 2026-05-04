@@ -1,5 +1,15 @@
 # UNIS_AGF212_KBand_RemoteSensing_2026
 Data and Code for UNIS AGF-212 Remote Sensing project
+Overall Authors: Carla Amic, Chloé Ghibaudo, Hayden Mann, Niklas Weber
+
+### Code Authors:
+- I: Hayden Mann: hmann@bowdoin.edu (until Summer 2027), hay.mann@icloud.com
+- II: Niklas Weber: **email here**
+- III: Carla Amic: carla-kus@gmx.de
+- IV: Professor Eero Rinne: eeror@unis.no
+- V: Emma Mickey J. MacKie and later adapted by Niels Boelt Mortensen (external)
+- VI: IMST GmbH (external)
+
 
 # Scripts
 
@@ -26,10 +36,4 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 - *signalling.py<sup> IV</sup>*: seems to be the same as "plot_data_with_GPS" do we need it ?
 - *single_measurement.py<sup> IV</sup>*: same as "200_measurements_BW2500.py" but only performs one single measurement instead of 200
 
-### Authors: 
-- I: Hayden Mann: hmann@bowdoin.edu (until Summer 2027), hay.mann@icloud.com
-- II: Niklas Weber: **email here**
-- III: Carla Amic: carla-kus@gmx.de
-- IV: Professor Eero Rinne: eeror@unis.no
-- V: Emma Mickey J. MacKie and later adapted by Niels Boelt Mortensen (external)
-- VI: IMST GmbH (external)
+
