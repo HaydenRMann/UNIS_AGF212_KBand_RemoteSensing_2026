@@ -33,7 +33,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 - *continuous_measurements_BW2500.py<sup> IV</sup>*: like "200_measurements_BW2500.py", but measurement number is not limited by 200 and operation has to be terminated by a user input
 - *continuous_measurements_BW2500_GPS.py<sup> IV</sup>*: same as "continuous_measurements_BW2500.py", but also records GPS-data
 - *radar_niklas2.py<sup> IV, II</sup>*: includes the Main-class used for operating the radar and thus is imported in "200_measurements_BW2500.py", "continuous_measurements_BW2500.py*" and "continuous_measurements_BW2500_GPS.py". Also includes useful functions for reading in .pkl-files, sky calibration, propagation speed correction, combining of channels and normalization. Original author is Eero Rinne, code adapted by Niklas Weber. --> maybe just rename to radar and delete the other radar.py, change the imports of some scripts ?
-- - *radar.py<sup> IV</sup>*: Original radar code from Eero Rinne. As of now, it is still used in some of the scripts.
+- *radar.py<sup> IV</sup>*: Original radar code from Eero Rinne. As of now, it is still used in some of the scripts.
 - *signalling.py<sup> IV</sup>*: seems to be the same as "plot_data_with_GPS" do we need it ?
 - *single_measurement.py<sup> IV</sup>*: same as "200_measurements_BW2500.py" but only performs one single measurement instead of 200
 
