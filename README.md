@@ -17,7 +17,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 ## Plotting
 - *interpolating.py<sup> I</sup>*: Interpolates snow depth data, provided via gps_snow_depth.csv within Tellbreen. Performs linear radial basis function interpolation.
 - *multi_gps_track_depth<sup> I</sup>*: Plots and maps snow depth from the radar transect data.
-- *plot_data_with_GPS.py<sup> IV</sup>*: same as '200_plot_radar', but additionally creates plot of the GPS track
+- *plot_data_with_GPS.py<sup> IV, II</sup>*: same as '200_plot_radar', but additionally creates plot of the GPS track
 
 ## Picking, Data Processing
 - *picking_working.ipynb<sup> I, II, V</sup>*: Jupyter notebook to manually identify and pick the height of snow surface and snow-ice interface. This is done by clicking on the radargram of a given measurement file. The heights of both interfaces as well as the calculated snow depth will be saved as both a .csv-file and a .npz-file. Original script via Emma Mickey J. MacKie and later adapted by Niels Boelt Mortensen before being tailored by Hayden Mann and Niklas Weber for this specific project.
