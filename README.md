@@ -1,6 +1,7 @@
 # UNIS_AGF212_KBand_RemoteSensing_2026
 Data and Code for UNIS AGF-212 Remote Sensing project
 - Overall Authors: Carla Amic, Chloé Ghibaudo, Hayden Mann, Niklas Weber
+- *If anything appears to be not working or missing: Contact Hayden and Niklas (emails below)*
 
 ### Code Author Directory:
 - I: Hayden Mann: hmann@bowdoin.edu (until Summer 2027), hay.mann@icloud.com
