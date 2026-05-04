@@ -1,3 +1,12 @@
+"""
+Author: Eero Rinne
+
+Description (Niklas Weber): Acript to operate the radar and conduct exactly 
+200 measurements in the field, saving data to "data.pkl"-file.
+Files will be stored in a folder named after date and a continuously 
+increasing counter for each measurement: "dd_mm_yyyy_counter".
+"""
+
 '''
 Imports
 '''
