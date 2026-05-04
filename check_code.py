@@ -1,3 +1,10 @@
+"""
+Author: Eero Rinne
+
+Description (Hayden Mann): Sanity check to see if the original 
+radar-running code is working as expected.
+"""
+
 import pickle
 
 count = 0
