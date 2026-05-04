@@ -1,4 +1,4 @@
-from radar_niklas2 import ReadFile, SkyCalibration, Combine_channels
+from radar import ReadFile, SkyCalibration, Combine_channels
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
