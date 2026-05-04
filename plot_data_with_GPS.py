@@ -141,13 +141,10 @@ with open('storage/'+filename+'/data.pkl', 'rb') as inp:
 
 print("Total frames read:", frame_count)
 
-
-
 propertime = list()
 
 for tmp_time in slowtime:
     propertime.append(datetime.datetime.strptime(gps[0].time, '%Y-%m-%dT%H:%M:%S.000Z') + datetime.timedelta(seconds=(tmp_time-slowtime[0])))
-
 
 
 # Now lets make an array out of the data
@@ -161,7 +158,6 @@ print(slowtime-slowtime[0])
 I1 = np.array(I1).T
 
 
-"""
 plt.figure(2)
 
 # More "SAR" looking orientation
@@ -185,7 +181,6 @@ plt.plot(propertime, np.sum(np.array(I1)[17:85,:],0))
 plt.title("Total backscatter between 1 and 5 meters")
 
 plt.show()
-"""
 
 
 lats = []
