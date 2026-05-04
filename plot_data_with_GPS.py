@@ -1,4 +1,9 @@
+"""
+Author: Eero Rinne
 
+Description (Niklas Weber):  same as '200_plot_radar', 
+but additionally creates plot of the GPS track.
+"""
 
 # To create a simple plot
 import matplotlib.pyplot as plt
