@@ -45,7 +45,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 # How to Run:
 
 ## Running the Radar: (All Code Written by IV: Eero Rinne)
-- Run through command line
+- Run through command line: in the format of "python3 [codename].py desired_filename"
 - Contact author for help: Eero Rinne: eeror@unis.no
 
 ## Data Analysis and Plotting:
