@@ -3,6 +3,8 @@ Author: Eero Rinne
 
 Description (Niklas Weber):  same as '200_plot_radar', 
 but additionally creates plot of the GPS track.
+
+Run in command line and add the filename you want to plot.
 """
 
 # To create a simple plot
