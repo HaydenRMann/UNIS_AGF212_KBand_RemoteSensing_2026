@@ -1,3 +1,11 @@
+"""
+Author: Hayden Mann
+
+Description: Plots and maps snow depth from the radar transect data. 
+Requires GPS input.
+
+"""
+
 from radar import ReadFile, SkyCalibration, Combine_channels
 import pandas as pd
 import numpy as np
