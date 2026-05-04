@@ -4,7 +4,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 # Scripts
 
 ## Initial Radar Processing
-- *ConfigClasses.py$^I$*: specifies system parameters
+- *ConfigClasses.py<sup>I</sup>*: specifies system parameters
 - *200_measurements_BW2500.py*: script to operate the radar and conduct exactly 200 measurements in the field, saving data to "data.pkl"-file, files will be stored in a folder named after date and a continuously increasing counter for each measurement: "dd_mm_yyyy_counter"
 - *200_plot_radar*: creates simple plots (radargram, final range profile of every channel) to check whether collected data makes sense
 - *check_code.py*: checks to see if the original radar code is working
