@@ -298,6 +298,9 @@ class Main():
 
 
 def ReadFile(filename):
+    # function to read .pkl-files with radar data
+    # returns dict with range 'x', time 'slowtime' and the 2D (time x range) data of the radar channels seperately
+    # also reads in GPS location if given in file
 
     # Load sys params
     with open('storage/'+filename+'/sysParams.pkl', 'rb') as inp:
@@ -385,6 +388,10 @@ def ReadFile(filename):
 
 
 def Combine_channels(data):
+    # function that takes existing data-dict and calculates the combined power / amplitude of all 4 channels
+    # logarithmic and linear versions of power / amplitude are added to the data-dict
+    # if data is already sky-calibrated, the calibrated channels are used for the calculation
+    
     if data['sky_calibrated']:
         Q1 = (10**((data['Q1_calibrated']/20)))*(2**21)
         Q2 = (10**((data['Q2_calibrated']/20)))*(2**21)
@@ -406,6 +413,9 @@ def Combine_channels(data):
 
     
 def SkyCalibration(SKY, data):
+    # function that performs sky calibration of data-dict by subtracting reference sky measurement for all channels
+    # SKY is the data-dict of the reference measurement
+    # adds calibrated channels to the data-dict
         
     data['vec_cal_Q1'] = np.mean(SKY['Q1'],0)
     data['vec_cal_I1'] = np.mean(SKY['I1'],0)
@@ -447,6 +457,7 @@ def SkyCalibration(SKY, data):
 
 
 def PlotChannel(data, str_channel):
+    # plots radargram of channel with the name 'str_channel'
     
     mtx_data = data[str_channel]
     slowtime = data['slowtime']
@@ -461,50 +472,32 @@ def PlotChannel(data, str_channel):
 
 
 def PlotNormalize(data, str_channel, max_range):
-    channel_data = data[str_channel]#(10**(data[str_channel]/20))*(2.**21)
+    # plots normalized radargram of channel with the name 'str_channel'
+    # measurements are normalized by picking the maximum backscatter value in the range [0 max_range] and dividing by this value (for each timestamp seperately)
+    
+    channel_data = data[str_channel]
     slowtime = data['slowtime']
     x_data = data['x']
     ind = x_data <= max_range
-   # print(len(x_data))
     x_data = x_data[ind]
-    #print(np.shape(channel_data))
-    #print(len(x_data))
 
     max_value = np.max(channel_data, axis=1)
-    #print(len(max_value))
     channel_data = np.transpose(channel_data)/max_value
 
     plt.imshow(channel_data[ind][:],extent=[slowtime[0]-slowtime[0],slowtime[len(slowtime)-1]-slowtime[0],x_data[len(x_data)-1],x_data[0]],origin='upper', interpolation='nearest', clim=[0,1], aspect='auto')
 
 
 def Correct_speed(data, height_radar, c_snow):
+    # calculates corrected range-axis by assuming a propagation speed 'c_snow' from the range 'Height_radar' onwards
+    # added to the data-dict as 'x_corr'
+    
     x_data = data['x']
     c_air = 3*(10**8) #m/s
     x_data_surface = x_data[np.argmin(abs(x_data-height_radar))]
     x_data[x_data>height_radar] = ((x_data[x_data>height_radar] - x_data_surface)*(c_snow/c_air)) + x_data_surface
     data['x_corr'] = np.array(x_data)
-    #print('Q1')
     return data
-
-"""
-def Peakfinder(data, str_channel, thres):
-    channel_data = data[str_channel]
-    x_data = data['x']
-
-    height_idx = np.array([])
-
-    for n_measurement in range(np.shape(channel_data)[0]):
-        time_data = channel_data[n_measurement][:]
-        np.append(height_idx, find_peaks(time_data, thres),1)
-
-    return(height_idx)
-"""
-
 
 def MeanEchoes(data, str_channel):
     vec_mean = np.mean(data[str_channel],0)
     return vec_mean
-
-
-
-#data = ReadFile('26_02_2026_1')
