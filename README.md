@@ -39,7 +39,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 
 # Other Files
 
-- Tellbreen_extent....<sup> I</sup>*: Shapefile extent of Tellbreen. EPSG/CRS is attached. Created in QGIS.
-- Interfaces (Folder): Necessary to run the radar code.
-- Radar_DATAAA<sup> all main authors</sup>*: Radar raw data, in .pkl format, from each Tellbreen transect from 04 March to 10 March.
-- gps_snow_depth.csv<sup> I</sup>*: A formatted .csv with latitude, longitude, and snow depth from the transect measurements.
+- *Tellbreen_extent....<sup> I</sup>*: Shapefile extent of Tellbreen. EPSG/CRS is attached. Created in QGIS.
+- *Interfaces* (Folder): Necessary to run the radar code.
+- *Radar_DATAAA<sup>* all main authors</sup>*: Radar raw data, in .pkl format, from each Tellbreen transect from 04 March to 10 March.
+- *gps_snow_depth.csv<sup> I</sup>*: A formatted .csv with latitude, longitude, and snow depth from the transect measurements.
