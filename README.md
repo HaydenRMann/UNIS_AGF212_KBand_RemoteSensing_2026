@@ -55,8 +55,8 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 - *multi_gps_track_depth<sup> I</sup>*: Input your filenames into the code and run the script.
 
 
-# Example Plots: (if not ran after downloading these folders, contact authors)
+# Example Plots:
 
-- Interpolation:<img width="3840" height="1624" alt="latest_interpolation" src="https://github.com/user-attachments/assets/b7e9b1a1-b261-4d38-b302-e86bf2bacf80" />
-- Transects: <img width="4800" height="1998" alt="latest_transects" src="https://github.com/user-attachments/assets/d70a22a2-d97a-442e-8689-5349603f62db" />
+- Interpolation (executes with current code in interpolation.py):<img width="3840" height="1624" alt="latest_interpolation" src="https://github.com/user-attachments/assets/b7e9b1a1-b261-4d38-b302-e86bf2bacf80" />
+- Transects (executes with current code in multi_gps_track_depth.py): <img width="4800" height="1998" alt="latest_transects" src="https://github.com/user-attachments/assets/d70a22a2-d97a-442e-8689-5349603f62db" />
 
