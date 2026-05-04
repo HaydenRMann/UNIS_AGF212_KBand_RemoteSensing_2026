@@ -4,8 +4,8 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 # Scripts
 
 ## Plotting
-- *interpolating.py<sup> I</sup>*: ?
-- *multi_gps_track_depth<sup> I</sup>*: ?
+- *interpolating.py<sup> I</sup>*: Interpolates snow depth data, provided via gps_snow_depth.csv within Tellbreen. Performs linear radial basis function interpolation.
+- *multi_gps_track_depth<sup> I</sup>*: Plots and maps snow depth from the radar transect data.
 - *plot_data_with_GPS.py<sup> IV</sup>*: same as '200_plot_radar', but additionally creates plot of the GPS track
 - *plot_first_frame.py<sup> IV</sup>*: same as '200_plot_radar' do we need it ?
 - *plot_last_frame.py<sup> IV</sup>*: same thing ?
