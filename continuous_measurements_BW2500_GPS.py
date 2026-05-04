@@ -1,3 +1,10 @@
+"""
+Author: Eero Rinne
+
+Description (Niklas Weber): same as "continuous_measurements_BW2500.py", 
+but also records GPS-data.
+"""
+
 '''
 Imports
 '''
