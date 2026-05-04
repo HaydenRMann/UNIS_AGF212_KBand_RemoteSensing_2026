@@ -1,3 +1,11 @@
+"""
+Author: Eero Rinne
+
+Description (Niklas Weber): Same as "200_measurements_BW2500.py" but 
+only performs one single measurement instead of 200
+
+"""
+
 '''
 Imports
 '''
