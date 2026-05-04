@@ -1,3 +1,14 @@
+"""
+Author: Hayden Mann
+
+Description: Interpolates snow depth data, provided via 
+gps_snow_depth.csv within Tellbreen. Performs linear 
+radial basis function interpolation. Plots the
+interpolation.
+
+"""
+
+
 import pandas as pd
 import numpy as np
 import geopandas as gpd
