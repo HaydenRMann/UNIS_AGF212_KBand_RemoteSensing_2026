@@ -1,4 +1,10 @@
+"""
+Author: Eero Rinne
 
+Description (Niklas Weber): Creates simple plots (radargram, 
+final range profile of every channel) to check whether 
+collected data makes sense.
+"""
 
 # To create a simple plot
 import matplotlib.pyplot as plt
