@@ -4,7 +4,7 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 
 ### Code Author Directory:
 - I: Hayden Mann: hmann@bowdoin.edu (until Summer 2027), hay.mann@icloud.com
-- II: Niklas Weber: **email here**
+- II: Niklas Weber: we.ni@gmx.de
 - III: Carla Amic: carla-kus@gmx.de
 - IV: Professor Eero Rinne: eeror@unis.no
 - V: Emma Mickey J. MacKie and later adapted by Niels Boelt Mortensen (external)
