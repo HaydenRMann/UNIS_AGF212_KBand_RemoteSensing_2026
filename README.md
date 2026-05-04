@@ -1,6 +1,11 @@
 # UNIS_AGF212_KBand_RemoteSensing_2026
 Data and Code for UNIS AGF-212 Remote Sensing project
 
+# Data
+- Interfaces:
+- Radar_DATAA: contains .csv- and .npz-files with the picked heights of the snow surface "surf_interp" and snow-ice interface "bed_interp" as well as the calculated snow thickness "snow_thickness" and the corresponding time axis "x_dense". Files were created using the "picking_working.ipynb"-script.
+- storage: contains the raw data in .pkl-format in a seperate folder for every measurement done during the 2026 fieldwork. Folders are named after the date of measurement and a continuously increasing counter: "dd_mm_yyyy_counter"
+
 # Scripts
 
 ## Initial Radar Processing
