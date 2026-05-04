@@ -1,3 +1,14 @@
+"""
+Author: Eero Rinne
+
+Description (Niklas Weber): Similar to "200_measurements_BW2500.py", 
+but measurement number is not limited by 200 and operation has to 
+be terminated by a user input (Command-C).
+
+"""
+
+
+
 '''
 Imports
 '''
