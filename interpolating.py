@@ -5,9 +5,13 @@ Description: Interpolates snow depth data, provided via
 gps_snow_depth.csv within Tellbreen. Performs linear 
 radial basis function interpolation. Plots the
 interpolation.
-
 """
 
+
+
+###
+# IMPORTS
+###
 
 import pandas as pd
 import numpy as np
@@ -21,15 +25,16 @@ import cartopy.io.img_tiles as cimgt
 import matplotlib.ticker as mticker
 import cartopy.mpl.ticker as cticker
 
-"""
-Load Data
-"""
+
+
+###
+# Load Data
+###
+
 df = pd.read_csv("gps_snow_depth.csv")
 tellbreen_extent = gpd.read_file("tellbreen_extent_converted.shp")
 
-"""
-CRS/RESOLUTION
-"""
+# Set CRS + Grid Resolution 
 TARGET_CRS = "epsg:32633"  # 3143 is for north but also rotates it (need to learn projection specificts). apparently 32633 also uses meters only so won't distorr
 GRID_RES = 400  # grid points
 
@@ -47,7 +52,7 @@ gdf_points = gpd.GeoDataFrame(
 gdf_points['x'] = gdf_points.geometry.x.round(1)
 gdf_points['y'] = gdf_points.geometry.y.round(1)
 
-# 3 steps:  Thank you chatgpt for the help on this part
+# 3 steps:  
     # 1. groups all snow thickness points by their x and y coordinates, so they don't overlap
     # 2. takes the mean snow thickness
     # 3. assignes to the x/y plot and then resets the index
@@ -59,9 +64,12 @@ y_pts = df_clean['y'].values
 z_pts = df_clean['snow_thickness'].values
 
 
-"""
-Creating grid to mask
-"""
+
+
+###
+# Create masking grid
+###
+
 # extract min/max x, y fro, shapefile
 minx, miny, maxx, maxy = tellbreen_extent.total_bounds
 
@@ -85,9 +93,10 @@ valid_mask = ~within_mask.index_right.isna().values.reshape(grid_x.shape)
 
 
 
-"""
-Interpolation
-"""
+###
+# Interpolation Fx
+###
+
 print("Interpolating " +  str(len(x_pts)) + " points in EPSG:3413...")
 
 # linear scipy interpolation set up function
@@ -106,10 +115,10 @@ z_grid[valid_mask] = rbf(grid_x[valid_mask], grid_y[valid_mask])
 z_grid = np.clip(z_grid, z_pts.min() / 1.1, z_pts.max() * 1.1)
 
 
-"""
-Plotting
-"""
 
+###
+# Plotting
+###
 
 # Get basemap
 class ESRIImagery(cimgt.GoogleTiles):
@@ -130,7 +139,6 @@ ax = plt.axes(projection=image.crs)
 
 
 # map bounds - based on shapefile 
-# """NEED TO UPDATE gps.trackwithdepth with this"""
 s_minx, s_miny, s_maxx, s_maxy = tellbreen_extent.total_bounds
 
 ax.set_extent(
@@ -138,13 +146,11 @@ ax.set_extent(
     crs=utm_crs  # meters!!
 )
 
-
 # add satellite, the 14 is what google said the best level of zoom would be (about 3x3 meter pixels)
 ax.add_image(image, 14) 
 
 # mask grid
 z_masked = np.ma.masked_invalid(z_grid)
-
 
 # plot interpolation
 im = ax.pcolormesh(
@@ -176,7 +182,9 @@ ax.scatter(
     transform=ccrs.PlateCarree()
 )
 
-# format
+###
+# Formatting
+###
 gl = ax.gridlines(
     crs=ccrs.PlateCarree(),
     draw_labels=True,
@@ -185,17 +193,14 @@ gl = ax.gridlines(
     alpha=0.6,
     linestyle='--'
 )
-
 gl.top_labels = False
 gl.right_labels = False
 # gl.xlines = False
 # gl.ylines = False # i want the lines for now
 
-# formattingg
+# Ticks
 gl.xformatter = cticker.LongitudeFormatter()
 gl.yformatter = cticker.LatitudeFormatter()
-
-# how many ticks
 gl.xlocator = mticker.MaxNLocator(nbins=5)
 gl.ylocator = mticker.MaxNLocator(nbins=5)
 
@@ -210,21 +215,11 @@ plt.colorbar(
     fraction=0.0238, # adjust this to set colorbar height
     label="Snow Thickness [m]",
 )
-# im.set_clim(0.36007363520912, 1.5915264699359375)
+
+# im.set_clim(0.36007363520912, 1.5915264699359375) # Color bar options
 im.set_clim(0, 2)
 
-# 0.36007363520912
-# 1.5915264699359375
+
 plt.savefig('latest_interpolation.png', dpi=600)
-
-
 # plt.title("Snow Thickness Interpolation (linear)")
 plt.show()
-
-
-
-
-
-"""
-SAVE CSV
-"""
