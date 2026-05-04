@@ -41,3 +41,13 @@ Data and Code for UNIS AGF-212 Remote Sensing project
 - *gps_snow_depth.csv<sup> I</sup>*: A formatted .csv with latitude, longitude, and snow depth from the transect measurements.
 
 # How to Run:
+
+## Running the Radar: (All Code Written by IV: Eero Rinne)
+- Run through command line
+- Contact author for help: Eero Rinne: eeror@unis.no
+
+## Data Analysis and Plotting:
+- *picking_working.ipynb<sup> I, II, V</sup>*: Input your filenames into the code and run the notebook.
+- *stationary_SWE.py<sup> V, II, III</sup>*: Input your filenames into the code and run the notebook.
+- *interpolating.py<sup> I</sup>*: Interpolates snow depth data, provided via gps_snow_depth.csv within Tellbreen. Performs linear radial basis function interpolation.
+- *multi_gps_track_depth<sup> I</sup>*: Plots and maps snow depth from the radar transect data.
